@@ -11,9 +11,9 @@ function Footer() {
                   <p>Acesse nossas Redes Socias!</p>
               </div>
               <div className="flex flex-row">
-                  <a href=""><img src="./src/assets/images/linkedin-logo.svg" alt="" /></a>
-                  <a href=""><img src="./src/assets/images/instagram-logo.svg" alt="" /></a>
-                  <a href=""><img src="./src/assets/images/github-logo.svg" alt="" /></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/marcelohsoares/"><img src="./src/assets/images/linkedin-logo.svg" alt="" /></a>
+                  <a target="_blank" href="https://www.instagram.com/"><img src="./src/assets/images/instagram-logo.svg" alt="" /></a>
+                  <a target="_blank" href="https://github.com/Marshel0"><img src="./src/assets/images/github-logo.svg" alt="" /></a>
                </div>
           </footer>
   

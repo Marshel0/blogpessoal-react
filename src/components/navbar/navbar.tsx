@@ -32,8 +32,8 @@ function Navbar() {
                     <nav >
                         <ul className="flex flex-row justify-end items-center py-4 px-16">
                             <li className="hover:underline mx-3">Postagens</li>
-                            <li className="hover:underline mx-3">Temas</li>
-                            <li className="hover:underline mx-3">Cadastrar Temas</li>
+                            <Link to='/temas' className='hover:underline mx-3'>Temas</Link>
+                            <Link to='/cadastroTema' className='hover:underline mx-3'>Cadastrar temas</Link>
                             <li className="hover:underline mx-3">Perfil</li>
                             <Link to="" onClick={logout} className="hover:underline mx-3">Sair</Link>
                         </ul>
