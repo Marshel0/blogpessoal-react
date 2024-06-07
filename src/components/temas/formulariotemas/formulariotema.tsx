@@ -3,6 +3,7 @@ import Tema from "../../../models/tema";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/service";
+import { ToastAlerta } from "../../../utils/toastalerta";
 
 function FormularioTema() {
     const [tema, setTema] = useState<Tema>({} as Tema);
@@ -48,15 +49,15 @@ function FormularioTema() {
             }
           })
   
-          alert('Tema atualizado com sucesso!')
+          ToastAlerta('Tema atualizado com sucesso!', 'sucesso')
           retornar()
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            ToastAlerta('O token expirou, faça login novamente.', 'info')
             handleLogout()
           } else {
-            alert('Erro ao atualizar o tema.')
+            ToastAlerta('Erro ao atualizar o tema.', 'erro')
           }
   
         }
@@ -69,14 +70,14 @@ function FormularioTema() {
             }
           })
   
-          alert('Tema cadastrado com sucesso!')
+          ToastAlerta('Tema cadastrado com sucesso!', 'sucesso')
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            ToastAlerta('O token expirou, faça login novamente', 'info')
             handleLogout()
           } else {
-            alert('Erro ao cadastrar o tema')
+            ToastAlerta('Erro ao cadastrar o tema.', 'erro')
           }
         }
       }
@@ -90,7 +91,7 @@ function FormularioTema() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Você precisa estar logado.');
+        ToastAlerta('Você precisa estar logado.', 'info');
         navigate('/login');
       }
     }, [token]);

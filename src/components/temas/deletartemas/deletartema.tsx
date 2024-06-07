@@ -3,6 +3,7 @@ import Tema from "../../../models/tema"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/service"
+import { ToastAlerta } from "../../../utils/toastalerta"
 
 
 function DeletarTema() {
@@ -25,7 +26,7 @@ function DeletarTema() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente.')
+                ToastAlerta('O token expirou, faça login novamente.', 'info')
                 handleLogout()
             }
         }
@@ -33,7 +34,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado.')
+            ToastAlerta('Você precisa estar logado.', 'info')
             navigate('/login')
         }
     }, [token])
@@ -56,10 +57,10 @@ function DeletarTema() {
                 }
             })
 
-            alert('Tema deletado com sucesso!')
+            ToastAlerta('Tema deletado com sucesso!', 'sucesso')
 
         } catch (error) {
-            alert('Erro ao deletar o tema.')
+            ToastAlerta('Erro ao deletar o tema.', 'erro')
         }
 
         retornar()
