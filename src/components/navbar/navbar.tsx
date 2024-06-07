@@ -35,8 +35,8 @@ function Navbar() {
                             <Link to='/postagens' className='hover:underline mx-3'>Postagens</Link>
                             <Link to='/temas' className='hover:underline mx-3'>Temas</Link>
                             <Link to='/cadastroTema' className='hover:underline mx-3'>Cadastrar temas</Link>
-                            <li className="hover:underline mx-3">Perfil</li>
-                            <Link to="" onClick={logout} className="hover:underline mx-3">Sair</Link>
+                            <Link to='/perfil' className='hover:underline mx-3'>Perfil</Link>
+                            <Link to="/login" onClick={logout} className="hover:underline mx-3">Sair</Link>
                         </ul>
                     </nav>
                 </div>
